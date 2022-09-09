@@ -35,6 +35,7 @@ class GameManager:
 
     def run(self):
         while not self.quit:
+
             events = pg.event.get()
             for event in events:
                 if event.type == pg.QUIT:

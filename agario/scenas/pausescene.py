@@ -17,6 +17,7 @@ class Pause:
         return SCENES.PAUSE
 
     def draw(self, screen):
+
         font = pg.font.SysFont('chalkduster.ttf',
                                72, bold=True, italic=True)
         text = font.render('Pause', True, (255, 255, 255))

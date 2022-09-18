@@ -27,6 +27,6 @@ class GameScene(Scene):
         return SCENES.GAME
 
     def draw(self, screen):
-        screen.fill(pg.Color("black"))
+        screen.fill(pg.Color("white"))
+        self.player.draw(screen)
         self.food_manager.draw(screen)
-        screen.blit(self.player.image, self.player.rect)

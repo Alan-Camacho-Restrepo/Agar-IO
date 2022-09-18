@@ -19,10 +19,10 @@ class GameManager:
         self.current_scene = self.scenes[SCENES.TITLE]
 
     def initialized_features(self):
-        self.GameIcon = pg.image.load(settings.game_icon)
+        GameIcon = pg.image.load(settings.game_icon)
         self.clock = pg.time.Clock()
         pg.display.set_caption(settings.title)
-        pg.display.set_icon(self.GameIcon)
+        pg.display.set_icon(GameIcon)
         self.quit = False
 
     def initialized_scenes(self):
@@ -35,7 +35,6 @@ class GameManager:
 
     def run(self):
         while not self.quit:
-
             events = pg.event.get()
             for event in events:
                 if event.type == pg.QUIT:

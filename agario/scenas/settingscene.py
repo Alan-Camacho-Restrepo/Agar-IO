@@ -7,7 +7,12 @@ from agario.schemas import SCENES
 
 class SettingScene(Scene):
     def __init__(self):
-        self
+        width = 600
+        height = 600
+        self.surface = pg.Surface((width, height))
+        self.surf_rect = self.surface.get_rect()
+        self.surf_rect.center = (settings.screen_width / 2,
+                                 settings.screen_height / 2)
 
     def update(self, events):
         for event in events:
@@ -16,13 +21,6 @@ class SettingScene(Scene):
         return SCENES.SETTINGS
 
     def draw(self, screen):
-        # set_w = settings.screen_width - 400
-        # set_h = settings.screen_height - 300
-        set_w = 600
-        set_h = 600
-        surface = pg.Surface((set_w, set_h))
-        surf_rect = surface.get_rect()
-        surf_rect.center = (settings.screen_width / 2,
-                            settings.screen_height / 2)
-        surface.fill((0, 155, 0))
-        screen.blit(surface, surf_rect)
+        self.surface.fill((0, 155, 0))
+        screen.blit(self.surface, self.surf_rect)
+        # return screen.get_rect()

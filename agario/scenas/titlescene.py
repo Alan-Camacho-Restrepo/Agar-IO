@@ -24,3 +24,4 @@ class TitleScene(Scene):
     def draw(self, screen):
         screen.fill((100, 140, 145))
         screen.blit(self.text, self.textRect)
+        # return screen.get_rect()

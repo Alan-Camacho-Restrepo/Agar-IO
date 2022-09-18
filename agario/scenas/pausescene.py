@@ -8,7 +8,12 @@ pg.font.init()
 
 class Pause:
     def __init__(self):
-        self
+        font = pg.font.SysFont('chalkduster.ttf',
+                               72, bold=True, italic=True)
+        self.text = font.render('Pause', True, (200, 0, 120))
+        self.textRect = self.text.get_rect()
+        self.textRect.center = (settings.screen_width / 2,
+                                settings.screen_height / 2)
 
     def update(self, events):
         for event in events:
@@ -17,11 +22,5 @@ class Pause:
         return SCENES.PAUSE
 
     def draw(self, screen):
-
-        font = pg.font.SysFont('chalkduster.ttf',
-                               72, bold=True, italic=True)
-        text = font.render('Pause', True, (255, 255, 255))
-        textRect = text.get_rect()
-        textRect.center = (settings.screen_width / 2,
-                           settings.screen_height / 2)
-        screen.blit(text, textRect)
+        screen.blit(self.text, self.textRect)
+        # return screen.get_rect()

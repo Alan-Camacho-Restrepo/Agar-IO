@@ -19,10 +19,9 @@ class Settings(BaseSettings):
     food_initial_width: int = Field(None, env='FOOD_INITIAL_WIDTH')
     food_initial_number: int = Field(None, env="FOOD_INITIAL_NUMBER")
 
-
-class Config:
-    env_file = "settings.env"
-    env_file_encoding = 'utf-8'
+    class Config:
+        env_file = "settings.env"
+        env_file_encoding = 'utf-8'
 
 
 settings = Settings()

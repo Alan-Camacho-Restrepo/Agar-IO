@@ -3,11 +3,13 @@ import random
 
 import pygame as pg
 
+from agario.config import settings
+
 
 class Food(pg.sprite.Sprite):
-    def __init__(self, width):
+    def __init__(self):
         super().__init__()
-        self.width = width
+        self.width = settings.food_initial_width
         self.image = self.get_image()
         # TODO: Modificar el tamaño del rectangulo
         # usando https://www.pygame.org/docs/ref/rect.html

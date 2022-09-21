@@ -19,6 +19,11 @@ class Settings(BaseSettings):
     food_initial_width: int = Field(None, env='FOOD_INITIAL_WIDTH')
     food_initial_number: int = Field(None, env="FOOD_INITIAL_NUMBER")
 
+    # Enemy configurations
+    enemy_initial_width: int = Field(None, env='ENEMY_INITIAL_WIDTH')
+    enemy_initial_number: int = Field(None, env="ENEMY_INITIAL_NUMBER")
+    enemy_speed: float = Field(None, env='ENEMY_SPEED')
+
     class Config:
         env_file = "settings.env"
         env_file_encoding = 'utf-8'

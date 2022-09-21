@@ -14,7 +14,7 @@ class FoodManager(pg.sprite.Group):
 
     def generate_food(self):
         for _ in range(settings.food_initial_number):
-            food = Food(settings.food_initial_width)
+            food = Food()
             x = random.randint(0, settings.map_width)
             y = random.randint(0, settings.map_height)
             food.set_position(x, y)
@@ -41,5 +41,5 @@ class FoodManager(pg.sprite.Group):
                     player.mask = pg.mask.from_surface(player.image)
 
             else:
-                food.rect.x = -10
-                food.rect.y = -10
+                food.rect.x = -100
+                food.rect.y = -100

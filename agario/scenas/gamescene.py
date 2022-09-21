@@ -1,6 +1,7 @@
 import pygame as pg
 
 from agario.config import settings
+from agario.enemymanager import EnemyManager
 from agario.foodmanager import FoodManager
 from agario.player import Player
 from agario.scenas.scene import Scene
@@ -13,12 +14,14 @@ class GameScene(Scene):
 
     def initialized_objects(self):
         self.food_manager = FoodManager()
+        self.enemy_manager = EnemyManager()
         self.player = Player(settings.player_initial_width)
 
     def update(self, events):
         mouse_x, mouse_y = pg.mouse.get_pos()
         self.player.update(mouse_x, mouse_y)
         self.food_manager.update(self.player)
+        self.enemy_manager.update(self.player)
         for event in events:
             if event.type == pg.KEYDOWN and event.key == pg.K_p:
                 return SCENES.PAUSE
@@ -29,4 +32,5 @@ class GameScene(Scene):
     def draw(self, screen):
         screen.fill(pg.Color("white"))
         self.player.draw(screen)
+        self.enemy_manager.draw(screen)
         self.food_manager.draw(screen)

@@ -26,19 +26,19 @@ class FoodManager(pg.sprite.Group):
                 food.rect.x = food.rect_real.x - player.camera.x
                 food.rect.y = food.rect_real.y - player.camera.y
                 foods = pg.sprite.spritecollide(player, self,
-                                                True, pg.sprite.collide_mask)
+                                                False, pg.sprite.collide_mask)
 
-                for food in foods:
-                    actual_center = player.rect.center
-                    player.width = 0.96 *\
-                        math.sqrt(player.width ** 2 + food.width ** 2)
-                    player.image = player.get_image(player.width)
-                    # points = int(player.width) -
-                    # settings.player_initial_width
-                    # print('Puntaje: ', points)
-                    player.rect = player.image.get_rect()
-                    player.rect.center = actual_center
-                    player.mask = pg.mask.from_surface(player.image)
+                # for food in foods:
+                #     actual_center = player.rect.center
+                #     player.width = 0.96 *\
+                #         math.sqrt(player.width ** 2 + food.width ** 2)
+                #     player.image = player.get_image(player.width)
+                #     # points = int(player.width) -
+                #     # settings.player_initial_width
+                #     # print('Puntaje: ', points)
+                #     player.rect = player.image.get_rect()
+                #     player.rect.center = actual_center
+                #     player.mask = pg.mask.from_surface(player.image)
 
             else:
                 food.rect.x = -100

@@ -5,6 +5,7 @@ from agario.scenas.gamescene import GameScene
 from agario.scenas.pausescene import Pause
 from agario.scenas.settingscene import SettingScene
 from agario.scenas.titlescene import TitleScene
+from agario.scenas.gameoverscene import GameOver
 from agario.schemas import SCENES
 
 pg.display.init()
@@ -30,7 +31,8 @@ class GameManager:
             SCENES.TITLE: TitleScene(),
             SCENES.GAME: GameScene(),
             SCENES.PAUSE: Pause(),
-            SCENES.SETTINGS: SettingScene()
+            SCENES.SETTINGS: SettingScene(),
+            SCENES.GAMEOVER: GameOver()
         }
 
     def run(self):

@@ -1,7 +1,7 @@
 import random
 
 import pygame as pg
-
+from agario.foodmanager import FoodManager
 from agario.config import settings
 from agario.enemy import Enemy
 
@@ -10,6 +10,7 @@ class EnemyManager(pg.sprite.Group):
     def __init__(self):
         super().__init__()
         self.generate_enemies()
+        self.food_manager = FoodManager()
 
     def generate_enemies(self):
         for _ in range(settings.enemy_initial_number):
@@ -42,8 +43,8 @@ class EnemyManager(pg.sprite.Group):
                 #     player.mask = pg.mask.from_surface(player.image)
 
             else:
-                enemy.rect.x = -100
-                enemy.rect.y = -100
+                enemy.rect.x = -200
+                enemy.rect.y = -200
 
         # for enemy in self:
             # enemy.move()

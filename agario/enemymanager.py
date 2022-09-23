@@ -21,7 +21,7 @@ class EnemyManager(pg.sprite.Group):
 
     def update(self, player):
         for enemy in self:
-            enemy.move()
+            enemy.move(player)
             if player.camera.colliderect(enemy.rect_real):
                 enemy.rect.x = enemy.rect_real.x - player.camera.x
                 enemy.rect.y = enemy.rect_real.y - player.camera.y

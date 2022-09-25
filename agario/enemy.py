@@ -43,7 +43,7 @@ class Enemy(pg.sprite.Sprite):
             xc, yc = player.camera.center
             Dx = xc - xd
             Dy = yc - yd
-            p = 0.04
+            p = 0.03
             xd += p * Dx
             yd += p * Dy
             self.rect_real.center = (xd, yd)

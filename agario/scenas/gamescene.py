@@ -26,10 +26,10 @@ class GameScene(Scene):
         self.player.update(mouse_x, mouse_y)
         self.food_manager.update(self.player)
         self.enemy_manager.update(self.player)
-        self.collide_group()
-        if pg.sprite.spritecollide(self.player, self.enemy_manager,
-                                   False, pg.sprite.collide_mask):
-            return SCENES.GAMEOVER
+        # self.collide_group()
+        # if pg.sprite.spritecollide(self.player, self.enemy_manager,
+        #                            False, pg.sprite.collide_mask):
+        #     return SCENES.GAMEOVER
         for event in events:
             if event.type == pg.KEYDOWN and event.key == pg.K_p:
                 return SCENES.PAUSE

@@ -7,6 +7,10 @@ class Settings(BaseSettings):
     title: str = Field(None, env="TITLE")
     game_icon: str = Field(None, env="ICON_DIR")
 
+    # Font settings
+    font_score: str = Field(None, env="FONT_SCORE")
+    font_title: str = Field(None, env="FONT_TITLE")
+
     # Map settings
     map_width: int = Field(None, env="MAP_WIDTH")
     map_height: int = Field(None, env="MAP_HEIGHT")

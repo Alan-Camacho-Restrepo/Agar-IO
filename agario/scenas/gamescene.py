@@ -6,11 +6,14 @@ from agario.foodmanager import FoodManager
 from agario.player import Player
 from agario.scenas.scene import Scene
 from agario.schemas import SCENES
+from agario.config import settings
 
+pg.font.init()
 
 class GameScene(Scene):
     def __init__(self):
         self.initialized_objects()
+        self.font = pg.font.Font(settings.font_score, 25)
 
     def initialized_objects(self):
         self.food_manager = FoodManager()
@@ -39,6 +42,10 @@ class GameScene(Scene):
 
     def draw(self, screen):
         screen.fill(pg.Color("white"))
+        text = self.font.render("Score: " + str(self.food_manager.score),
+                                True, (0, 0, 0))
+        screen.blit(text, [0, 0])
         self.player.draw(screen)
         self.enemy_manager.draw(screen)
         self.food_manager.draw(screen)
+        # pg.display.flip()

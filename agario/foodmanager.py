@@ -11,6 +11,7 @@ class FoodManager(pg.sprite.Group):
     def __init__(self):
         super().__init__()
         self.generate_food()
+        self.score = 0
 
     def generate_food(self):
         for _ in range(settings.food_initial_number):
@@ -29,6 +30,7 @@ class FoodManager(pg.sprite.Group):
                                                 True, pg.sprite.collide_mask)
 
                 for food in foods:
+                    self.score += 1
                     actual_center = player.rect.center
                     player.width = 1 *\
                         math.sqrt(player.width ** 2 + food.width ** 2)

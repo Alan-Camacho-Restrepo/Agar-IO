@@ -33,22 +33,22 @@ class TitleScene(Scene):
         return SCENES.TITLE
 
     def draw(self, screen):
-        screen.fill((100, 140, 145))
+        screen.fill(settings.background_color)
         # Horizontal lines
         pg.draw.line(
-            screen, (100, 100, 100),
+            screen, settings.lines_color,
             (0, settings.screen_height / 15),
             (settings.screen_width, settings.screen_height / 15),
             4
         )
         pg.draw.line(
-            screen, (100, 100, 100),
+            screen, settings.lines_color,
             (0, settings.screen_height / 2),
             (settings.screen_width, settings.screen_height / 2),
             4
         )
         pg.draw.line(
-            screen, (100, 100, 100),
+            screen, settings.lines_color,
             (0, 14 * settings.screen_height / 15),
             (settings.screen_width, 14 * settings.screen_height / 15),
             4
@@ -56,19 +56,19 @@ class TitleScene(Scene):
 
         # Vertical lines
         pg.draw.line(
-            screen, (100, 100, 100),
+            screen, settings.lines_color,
             (2 * settings.screen_width / 9, 0),
             (2 * settings.screen_width / 9, settings.screen_height),
             4
         )
         pg.draw.line(
-            screen, (100, 100, 100),
+            screen, settings.lines_color,
             (settings.screen_width / 2, 0),
             (settings.screen_width / 2, settings.screen_height),
             4
         )
         pg.draw.line(
-            screen, (100, 100, 100),
+            screen, settings.lines_color,
             (7 * settings.screen_width / 9, 0),
             (7 * settings.screen_width / 9, settings.screen_height),
             4
@@ -78,57 +78,132 @@ class TitleScene(Scene):
         pg.draw.circle(
             screen, (255, 0, 0),
             ((3 / 4) * settings.screen_width / 9, 0),
-            95, 5
+            95
         )
         pg.draw.circle(
-            screen, (255, 0, 0),
+            screen, (200, 24, 40),
+            ((3 / 4) * settings.screen_width / 9, 0),
+            95, 5
+        )
+
+        pg.draw.circle(
+            screen, (0, 100, 220),
             (4 * settings.screen_width / 9, settings.screen_height / 15),
             190
         )
         pg.draw.circle(
-            screen, (255, 0, 0),
+            screen, (0, 130, 230),
+            (4 * settings.screen_width / 9, settings.screen_height / 15),
+            190, 5
+        )
+
+        pg.draw.circle(
+            screen, (107, 32, 174),
             (8 * settings.screen_width / 9, 0),
             40
         )
         pg.draw.circle(
-            screen, (255, 0, 0),
+            screen, (107, 32, 144),
+            (8 * settings.screen_width / 9, 0),
+            40, 5
+        )
+
+        pg.draw.circle(
+            screen, (205, 100, 0),
             (7 * settings.screen_width / 9, 3 * settings.screen_height / 15),
             60
         )
         pg.draw.circle(
-            screen, (255, 0, 0),
+            screen, (195, 80, 40),
+            (7 * settings.screen_width / 9, 3 * settings.screen_height / 15),
+            60, 5
+        )
+
+        pg.draw.circle(
+            screen, (12, 24, 200),
             (0.5 * settings.screen_width / 9,
             (29 / 2) * settings.screen_height / 15),
             50
         )
         pg.draw.circle(
-            screen, (255, 0, 0),
+            screen, (0, 60, 150),
+            (0.5 * settings.screen_width / 9,
+            (29 / 2) * settings.screen_height / 15),
+            50, 5
+        )
+
+        pg.draw.circle(
+            screen, (40, 232, 24),
             (2 * settings.screen_width / 9,
             (27 / 2) * settings.screen_height / 15),
             85
         )
         pg.draw.circle(
-            screen, (255, 0, 0),
+            screen, (80, 232, 24),
+            (2 * settings.screen_width / 9,
+            (27 / 2) * settings.screen_height / 15),
+            85, 5
+        )
+
+        pg.draw.circle(
+            screen, (26, 194, 125),
             ((17 / 2) * settings.screen_width / 9,
             11 * settings.screen_height / 15),
             30
         )
         pg.draw.circle(
-            screen, (255, 0, 0),
+            screen, (36, 164, 115),
+            ((17 / 2) * settings.screen_width / 9,
+            11 * settings.screen_height / 15),
+            30, 5
+        )
+
+        pg.draw.circle(
+            screen, (229, 27, 85),
             (9 * settings.screen_width / 9, 18 * settings.screen_height / 15),
             230
         )
         pg.draw.circle(
-            screen, (255, 0, 0),
+            screen, (210, 27, 65),
+            (9 * settings.screen_width / 9, 18 * settings.screen_height / 15),
+            230, 5
+        )
+
+        pg.draw.circle(
+            screen, (255, 250, 0),
             ((11 / 2) * settings.screen_width / 9, settings.screen_height),
             85
         )
         pg.draw.circle(
-            screen, (255, 0, 0),
+            screen, (255, 215, 30),
+            ((11 / 2) * settings.screen_width / 9, settings.screen_height),
+            85, 5
+        )
+
+        pg.draw.circle(
+            screen, (250, 0, 255),
             (4 * settings.screen_width / 9, 12 * settings.screen_height / 15),
             30
         )
+        pg.draw.circle(
+            screen, (200, 50, 210),
+            (4 * settings.screen_width / 9, 12 * settings.screen_height / 15),
+            30, 5
+        )
+
+        pg.draw.circle(
+            screen, (31, 145, 95),
+            ((5 / 3) * settings.screen_width / 9, 
+              5 * settings.screen_height / 15),
+            35
+        )
+        pg.draw.circle(
+            screen, (0, 140, 104),
+            ((5 / 3) * settings.screen_width / 9, 
+              5 * settings.screen_height / 15),
+            35, 5
+        )
+
         screen.blit(self.text, self.textRect)
         screen.blit(self.text1, self.textRect1)
         screen.blit(self.text2, self.textRect2)
-

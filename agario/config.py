@@ -1,5 +1,5 @@
 from pydantic import BaseSettings, Field
-
+from typing import Tuple
 
 class Settings(BaseSettings):
     screen_width: int = Field(None, env="SCREEN_WIDTH")
@@ -10,6 +10,11 @@ class Settings(BaseSettings):
     # Font settings
     font_score: str = Field(None, env="FONT_SCORE")
     font_title: str = Field(None, env="FONT_TITLE")
+
+    # Colors feautures
+    player_color: Tuple[int, int, int] = Field(None, env="PLAYER_COLOR")
+    background_color: Tuple[int, int, int] = Field(None, env="BACKGROUND_COLOR")
+    lines_color: Tuple[int, int, int] = Field(None, env="LINES_COLOR")
 
     # Map settings
     map_width: int = Field(None, env="MAP_WIDTH")

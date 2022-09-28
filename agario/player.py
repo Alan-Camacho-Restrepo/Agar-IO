@@ -26,7 +26,7 @@ class Player(pg.sprite.Sprite):
         image = pg.Surface((width, width))
         image.fill((0, 0, 0))
         image.set_colorkey((0, 0, 0))
-        pg.draw.circle(image, (7, 255, 211),
+        pg.draw.circle(image, settings.player_color,
                        (width / 2, width / 2), width / 2)
         pg.draw.circle(image, (255, 255, 255),
                        (width / 2, width / 2), 1)

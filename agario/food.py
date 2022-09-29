@@ -4,6 +4,9 @@ import random
 import pygame as pg
 
 from agario.config import settings
+from agario.colors import COLORS
+
+food_colors = list(COLORS.values())
 
 
 class Food(pg.sprite.Sprite):
@@ -35,9 +38,7 @@ class Food(pg.sprite.Sprite):
                       math.cos(72 * (math.pi / 180)), self.width)
 
             # Color aleatorio
-            color = (random.randint(0, 255),
-                     random.randint(0, 255),
-                     random.randint(0, 255))
+            color = random.choice(food_colors)
 
             # Dibujando el pentagono
             pg.draw.polygon(surface, color,
@@ -56,9 +57,7 @@ class Food(pg.sprite.Sprite):
             p6 = (0, l*math.sin(60 * (math.pi / 180)))
 
             # Color aleaotrio
-            color = (random.randint(0, 255),
-                     random.randint(0, 255),
-                     random.randint(0, 255))
+            color = random.choice(food_colors)
 
             # Dibujando el hexagono
             pg.draw.polygon(surface, color, (p1, p2, p3, p4, p5, p6))

@@ -33,6 +33,10 @@ class GameScene(Scene):
         # if pg.sprite.spritecollide(self.player, self.enemy_manager,
         #                            False, pg.sprite.collide_mask):
         #     return SCENES.GAMEOVER
+
+        # if self.food_manager.score == settings.food_initial_number:
+        #     return SCENES.WIN TODO: to choose again play or quit
+
         for event in events:
             if event.type == pg.KEYDOWN and event.key == pg.K_p:
                 return SCENES.PAUSE

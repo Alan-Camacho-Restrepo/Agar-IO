@@ -48,6 +48,6 @@ class GameManager:
             self.current_scene = self.scenes[out]
             self.current_scene.draw(self.screen)
             pg.display.flip()
-            self.clock.tick(50)
+            self.clock.tick(60)
 
         pg.display.quit()

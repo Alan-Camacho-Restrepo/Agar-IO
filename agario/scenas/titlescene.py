@@ -9,27 +9,39 @@ pg.font.init()
 
 class TitleScene(Scene):
     def __init__(self):
-        font = pg.font.Font(settings.font_title, 40)
-        self.text = font.render('Press SPACE to play', True, (0, 0, 0))
+        self.font = pg.font.Font(settings.font_title, 40)
+        self.text = self.font.render('Press SPACE to play', True, (0, 0, 0))
         self.textRect = self.text.get_rect()
         self.textRect.center = (settings.screen_width / 2,
                                 settings.screen_height / 2)
 
-        font1 = pg.font.Font(settings.font_title, 25)
-        self.text1 = font1.render('settings', True, (0, 0, 0))
+        self.font1 = pg.font.Font(settings.font_title, 25)
+        self.text1 = self.font1.render('settings', True, (0, 0, 0))
         self.textRect1 = self.text1.get_rect()
         self.textRect1.center = (settings.screen_width / 2,
                                  5 * settings.screen_height / 8)
 
-        self.text2 = font1.render('credits', True, (0, 0, 0))
+        self.text2 = self.font1.render('credits', True, (0, 0, 0))
         self.textRect2 = self.text2.get_rect()
         self.textRect2.center = (settings.screen_width / 2,
                                  11 * settings.screen_height / 16)
 
     def update(self, events):
+        mouse_x, mouse_y = pg.mouse.get_pos()
         for event in events:
             if event.type == pg.KEYDOWN and event.key == pg.K_SPACE:
                 return SCENES.GAME
+            # if event.type == pg.MOUSEBUTTONDOWN:
+            if settings.screen_width / 2 - 90 <= mouse_x\
+                <= settings.screen_width / 2 + 90 and\
+                11 * settings.screen_height / 16 - 10 <= mouse_y\
+                <= 11 * settings.screen_height / 16 + 10:
+                self.text2 = self.font1.render('credits', True, (0, 200, 0))
+                if event.type == pg.MOUSEBUTTONDOWN:
+                    return SCENES.CREDITS
+            else:
+                self.text2 = self.font1.render('credits', True, (0, 0, 0))
+
         return SCENES.TITLE
 
     def draw(self, screen):

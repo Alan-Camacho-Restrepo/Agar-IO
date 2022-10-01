@@ -15,6 +15,7 @@ class Settings(BaseSettings):
     player_color: Tuple[int, int, int] = Field(None, env="PLAYER_COLOR")
     background_color: Tuple[int, int, int] = Field(None, env="BACKGROUND_COLOR")
     lines_color: Tuple[int, int, int] = Field(None, env="LINES_COLOR")
+    lines_color_credits: Tuple[int, int, int] = Field(None, env="LINES_COLOR_CREDITS")
 
     # Map settings
     map_width: int = Field(None, env="MAP_WIDTH")

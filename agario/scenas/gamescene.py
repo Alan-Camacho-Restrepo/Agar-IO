@@ -34,8 +34,8 @@ class GameScene(Scene):
                                    False, pg.sprite.collide_mask):
             return SCENES.GAMEOVER
 
-        # if self.food_manager.score == settings.food_initial_number:
-        #     return SCENES.WIN TODO: to choose again play or quit
+        if self.food_manager.score == settings.food_initial_number:
+            return SCENES.WIN
 
         for event in events:
             if event.type == pg.KEYDOWN and event.key == pg.K_p:

@@ -8,9 +8,10 @@ pg.font.init()
 
 class Pause:
     def __init__(self):
-        font = pg.font.SysFont('chalkduster.ttf',
-                               72, bold=True, italic=True)
-        self.text = font.render('Pause', True, (200, 0, 120))
+        font = pg.font.Font(settings.font_title,
+                               72)
+        self.text = font.render('Paused', True, (30, 30, 30))
+        self.text.set_alpha(15)
         self.textRect = self.text.get_rect()
         self.textRect.center = (settings.screen_width / 2,
                                 settings.screen_height / 2)
@@ -21,6 +22,5 @@ class Pause:
                 return SCENES.GAME
         return SCENES.PAUSE
 
-    def draw(self, screen):
+    def draw(self, screen):    
         screen.blit(self.text, self.textRect)
-        # return screen.get_rect()

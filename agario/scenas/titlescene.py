@@ -31,9 +31,9 @@ class TitleScene(Scene):
         for event in events:
             if event.type == pg.KEYDOWN and event.key == pg.K_SPACE:
                 return SCENES.GAME
-            # if event.type == pg.MOUSEBUTTONDOWN:
-            if settings.screen_width / 2 - 90 <= mouse_x\
-                <= settings.screen_width / 2 + 90 and\
+
+            if settings.screen_width / 2 - 88 <= mouse_x\
+                <= settings.screen_width / 2 + 85 and\
                 11 * settings.screen_height / 16 - 10 <= mouse_y\
                 <= 11 * settings.screen_height / 16 + 10:
                 self.text2 = self.font1.render('credits', True, (0, 200, 0))
@@ -41,6 +41,16 @@ class TitleScene(Scene):
                     return SCENES.CREDITS
             else:
                 self.text2 = self.font1.render('credits', True, (0, 0, 0))
+
+            if settings.screen_width / 2 - 100 <= mouse_x\
+                <= settings.screen_width / 2 + 96 and\
+                5 * settings.screen_height / 8 - 10 <= mouse_y\
+                <= 5 * settings.screen_height / 8 + 10:
+                self.text1 = self.font1.render('settings', True, (0, 200, 0))
+                if event.type == pg.MOUSEBUTTONDOWN:
+                    return SCENES.SETTINGS
+            else:
+                self.text1 = self.font1.render('settings', True, (0, 0, 0))
 
         return SCENES.TITLE
 

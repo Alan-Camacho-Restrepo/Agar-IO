@@ -30,21 +30,6 @@ class EnemyManager(pg.sprite.Group):
                                                   False, 
                                                   pg.sprite.collide_mask)
 
-                # for enemy in enemies:
-                #     actual_center = player.rect.center
-                #     player.width = 0.96 *\
-                #         math.sqrt(player.width ** 2 + food.width ** 2)
-                #     player.image = player.get_image(player.width)
-                #     # points = int(player.width) -
-                #     # settings.player_initial_width
-                #     # print('Puntaje: ', points)
-                #     player.rect = player.image.get_rect()
-                #     player.rect.center = actual_center
-                #     player.mask = pg.mask.from_surface(player.image)
-
             else:
                 enemy.rect.x = -200
                 enemy.rect.y = -200
-
-        # for enemy in self:
-            # enemy.move()

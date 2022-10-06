@@ -15,6 +15,7 @@ class Settings(BaseSettings):
     player_color: Tuple[int, int, int] = Field(None, env="PLAYER_COLOR")
     background_color: Tuple[int, int, int] = Field(None, env="BACKGROUND_COLOR")
     lines_color: Tuple[int, int, int] = Field(None, env="LINES_COLOR")
+    lines_color_game: Tuple[int, int, int] = Field(None, env="LINES_COLOR_GAME")
     lines_color_credits: Tuple[int, int, int] = Field(None, env="LINES_COLOR_CREDITS")
 
     # Map settings
@@ -30,7 +31,7 @@ class Settings(BaseSettings):
     food_initial_number: int = Field(None, env="FOOD_INITIAL_NUMBER")
 
     # Enemy configurations
-    enemy_initial_width: int = Field(None, env='ENEMY_INITIAL_WIDTH')
+    enemy_initial_width: Tuple[int, int, int] = Field(None, env='ENEMY_INITIAL_WIDTH')
     enemy_initial_number: int = Field(None, env="ENEMY_INITIAL_NUMBER")
     enemy_speed: float = Field(None, env='ENEMY_SPEED')
 

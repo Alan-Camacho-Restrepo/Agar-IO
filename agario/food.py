@@ -4,7 +4,7 @@ import random
 import pygame as pg
 
 from agario.config import settings
-from agario.colors import COLORS, MYCOLORS
+from agario.colors import COLORS
 
 food_colors = list(COLORS.values())
 
@@ -14,8 +14,6 @@ class Food(pg.sprite.Sprite):
         super().__init__()
         self.width = settings.food_initial_width
         self.image = self.get_image()
-        # TODO: Modificar el tamaño del rectangulo
-        # usando https://www.pygame.org/docs/ref/rect.html
         self.rect = self.image.get_rect()
         self.image.set_colorkey((0, 0, 0))
         self.mask = pg.mask.from_surface(self.image)
@@ -37,10 +35,9 @@ class Food(pg.sprite.Sprite):
             point4 = (self.width - lado *
                       math.cos(72 * (math.pi / 180)), self.width)
 
-            # Color aleatorio
-            color = random.choice(MYCOLORS)
+            color = random.choice(food_colors)
 
-            # Dibujando el pentagono
+            # Pentagon
             pg.draw.polygon(surface, color,
                             (point1, point2, point3, point4, point5)
                             )
@@ -56,10 +53,9 @@ class Food(pg.sprite.Sprite):
             p5 = (l * math.cos(60 * (math.pi / 180)), self.width)
             p6 = (0, l*math.sin(60 * (math.pi / 180)))
 
-            # Color aleaotrio
-            color = random.choice(MYCOLORS)
+            color = random.choice(food_colors)
 
-            # Dibujando el hexagono
+            # Hexagon
             pg.draw.polygon(surface, color, (p1, p2, p3, p4, p5, p6))
 
             return surface

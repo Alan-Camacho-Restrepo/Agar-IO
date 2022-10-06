@@ -32,12 +32,9 @@ class FoodManager(pg.sprite.Group):
                 for food in foods:
                     self.score += 1
                     actual_center = player.rect.center
-                    player.width = 1 *\
-                        math.sqrt(player.width ** 2 + food.width ** 2)
+                    player.width += 20 * (1 / player.width)\
+                                    + (1 / player.width) * food.width
                     player.image = player.get_image(player.width)
-                    # points = int(player.width) -
-                    # settings.player_initial_width
-                    # print('Puntaje: ', points)
                     player.rect = player.image.get_rect()
                     player.rect.center = actual_center
                     player.mask = pg.mask.from_surface(player.image)

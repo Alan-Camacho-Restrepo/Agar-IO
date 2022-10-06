@@ -8,8 +8,7 @@ pg.font.init()
 
 class GameOver:
     def __init__(self):
-        font = pg.font.SysFont('chalkduster.ttf',
-                               72, bold=True, italic=True)
+        font = pg.font.Font(settings.font_title, 72)
         self.text = font.render('Game Over', True, (0, 0, 0))
         self.textRect = self.text.get_rect()
         self.textRect.center = (settings.screen_width / 2,
@@ -23,4 +22,3 @@ class GameOver:
 
     def draw(self, screen):
         screen.blit(self.text, self.textRect)
-        # return screen.get_rect()

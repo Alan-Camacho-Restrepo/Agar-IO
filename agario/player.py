@@ -7,14 +7,11 @@ class Player(pg.sprite.Sprite):
     def __init__(self, width):
         super().__init__()
         self.width = width
-        # Surface to draw player's object
         self.image = self.get_image(width)
         self.rect = self.image.get_rect()
         x_ps = settings.screen_width / 2
         y_ps = settings.screen_height / 2
         self.rect.center = (x_ps, y_ps)
-        # self.points = 0
-        # mask of the image/surface
         self.mask = pg.mask.from_surface(self.image)
 
         x_camera = settings.map_width / 2 - settings.screen_width / 2
@@ -28,8 +25,8 @@ class Player(pg.sprite.Sprite):
         image.set_colorkey((0, 0, 0))
         pg.draw.circle(image, settings.player_color,
                        (width / 2, width / 2), width / 2)
-        pg.draw.circle(image, (255, 255, 255),
-                       (width / 2, width / 2), 1)
+        pg.draw.circle(image, (40, 40, 40),
+                       (width / 2, width / 2), width / 2, 2)
 
         return image
 
@@ -61,7 +58,7 @@ class Player(pg.sprite.Sprite):
             down_point = (x + x_dinamic, settings.screen_height)
             pg.draw.line(
                 screen,
-                (0, 0, 0),
+                settings.lines_color_game,
                 up_point,
                 down_point
             )
@@ -71,7 +68,7 @@ class Player(pg.sprite.Sprite):
             rigth_point = (settings.screen_width, y + y_dinamic)
             pg.draw.line(
                 screen,
-                (0, 0, 0),
+                settings.lines_color_game,
                 left_point,
                 rigth_point
             )

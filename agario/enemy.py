@@ -1,6 +1,9 @@
 import random
 import pygame as pg
 from agario.config import settings
+from agario.colors import ENEMIES_COLOR
+
+ENEMY_COLOR = list(ENEMIES_COLOR.values())
 
 def add(x, y):
     return x + y
@@ -12,7 +15,7 @@ def substract(x, y):
 class Enemy(pg.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.width = settings.enemy_initial_width
+        self.width = random.choice(settings.enemy_initial_width)
         self.image = self.get_image()
         self.rect = self.image.get_rect()
         self.image.set_colorkey((0, 0, 0))
@@ -23,8 +26,8 @@ class Enemy(pg.sprite.Sprite):
 
     def get_image(self):
         image = pg.Surface((self.width, self.width))
-        # TODO: color choice in enemies
-        pg.draw.circle(image, (255, 0, 0),
+        color = random.choice(ENEMY_COLOR)
+        pg.draw.circle(image, color,
                        (self.width / 2, self.width / 2),
                        self.width / 2)
 
@@ -65,25 +68,6 @@ class Enemy(pg.sprite.Sprite):
 
             if self.rect_real.y <= 0 and self.rect_real.x >= 0:
                 self.speed_y = -self.speed_y
-
-            # if self.rect_real.x == 0 and self.rect_real.y == 0:
-            #     self.speed_x = -self.speed_x
-            #     self.speed_y = -self.speed_y
-
-            # if self.rect_real.x == settings.map_width - self.width\
-            #         and self.rect_real.y == settings.map_height - self.width:
-            #     self.speed_x = -self.speed_x
-            #     self.speed_y = -self.speed_y
-
-            # if self.rect_real.x == settings.map_width - self.width\
-            #         and self.rect_real.y == 0:
-            #     self.speed_x = -self.speed_x
-            #     self.speed_y = -self.speed_y
-
-            # if self.rect_real.x == 0\
-            #         and self.rect_real.y == settings.map_height - self.width:
-            #     self.speed_x = -self.speed_x
-            #     self.speed_y = -self.speed_y
 
     def set_position(self, x, y):
         self.rect.center = (x, y)

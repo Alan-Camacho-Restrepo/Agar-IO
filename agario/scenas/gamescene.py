@@ -29,10 +29,10 @@ class GameScene(Scene):
         self.player.update(mouse_x, mouse_y)
         self.food_manager.update(self.player)
         self.enemy_manager.update(self.player)
-        # self.collide_group()
-        # if pg.sprite.spritecollide(self.player, self.enemy_manager,
-        #                            False, pg.sprite.collide_mask):
-        #     return SCENES.GAMEOVER
+        self.collide_group()
+        if pg.sprite.spritecollide(self.player, self.enemy_manager,
+                                   False, pg.sprite.collide_mask):
+            return SCENES.GAMEOVER
 
         # if self.food_manager.score == settings.food_initial_number:
         #     return SCENES.WIN TODO: to choose again play or quit
@@ -40,8 +40,7 @@ class GameScene(Scene):
         for event in events:
             if event.type == pg.KEYDOWN and event.key == pg.K_p:
                 return SCENES.PAUSE
-            if event.type == pg.KEYDOWN and event.key == pg.K_s:
-                return SCENES.SETTINGS
+
         return SCENES.GAME
 
     def draw(self, screen):
@@ -52,4 +51,3 @@ class GameScene(Scene):
         self.player.draw(screen)
         self.enemy_manager.draw(screen)
         self.food_manager.draw(screen)
-        # pg.display.flip()

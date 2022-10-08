@@ -2,7 +2,7 @@
 name = "agar-io"
 version = "0.1.0"
 description = "Template for generating python projects"
-authors = ["Luis Papiernik <lpapiernik24@gmail.com>"]
+authors = ["Alan Camacho <alanstivencamacho@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"

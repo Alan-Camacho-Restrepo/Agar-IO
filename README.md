@@ -8,3 +8,19 @@ Last-verison: 6-10-2022
    4. Doing the player's speed can be constant.
    5. Disappear the food and increase width player when the player is above 50% of food
 
+How can I play this game? 
+Follow the next steps for gaming:
+1. Install Poetry. Poetry is a tool for dependency management and packaging in Python. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you. 
+For installing (Linux, Windows, macOS): 
+
+   curl -sSL https://install.python-poetry.org | python3 -
+
+2. Update and install packages of this repository:
+
+   poetry update
+   poetry install
+   poetry --version 
+
+3. Activate the environment poetry with the necessary packages to play. 
+
+   poetry shell 

@@ -13,14 +13,14 @@ Follow the next steps for gaming:
 1. Install Poetry. Poetry is a tool for dependency management and packaging in Python. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you. 
 For installing (Linux, Windows, macOS): 
 
-   curl -sSL https://install.python-poetry.org | python3 -
+   $curl -sSL https://install.python-poetry.org | python3 -
 
 2. Update and install packages of this repository:
 
-   poetry update
-   poetry install
-   poetry --version 
+   $poetry install
+   $poetry update
+   $poetry --version 
 
 3. Activate the environment poetry with the necessary packages to play. 
 
-   poetry shell 
+   $poetry shell 

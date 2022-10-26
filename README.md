@@ -11,7 +11,7 @@ Last-verison: 6-10-2022
 How can I play this game? 
 Follow the next steps for gaming:
 1. Install Poetry. Poetry is a tool for dependency management and packaging in Python. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you. 
-For installing (Linux, Windows, macOS): 
+For installing (Linux, Windows, macOS): or visit the oficial site: https://python-poetry.org/docs/#installing-with-the-official-installer to know new versions or modifications.
 
    $curl -sSL https://install.python-poetry.org | python3 -
 

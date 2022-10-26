@@ -18,7 +18,9 @@ For installing (Linux, Windows, macOS):
 2. Update and install packages of this repository:
 
    $poetry install
+   
    $poetry update
+   
    $poetry --version 
 
 3. Activate the environment poetry with the necessary packages to play. 
